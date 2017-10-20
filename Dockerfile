@@ -18,7 +18,7 @@ RUN git clone https://github.com/uskudnik/amazon-glacier-cmd-interface.git \
     && git checkout 9f28132f9872e1aad9e956e5613b976504e930c8  \
     && python setup.py install
 
-COPY upload-in-loop.sh /usr/local/bin/entrypoint.sh
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod 755 /usr/local/bin/entrypoint.sh 
 
 ENV VAULT_NAME=""
@@ -29,4 +29,4 @@ ENV region=""
 ENV bookkeeping="False" 
 ENV bookkeeping-domain-name="" 
 
-ENTRYPOINT ["entrypoint.sh", "$VAULT_NAME" ]
+ENTRYPOINT ["entrypoint.sh"]
