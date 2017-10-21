@@ -14,7 +14,7 @@ do
    for archive in `ls -1 .`
    do
       echo "uploading ${archive} to $VAULT_NAME"
-      output=`glacier-cmd upload  --description "${archive}"  ${VAULT_NAME} ${archive} --output json`
+      output=`glacier-cmd --output json upload  --description "${archive}"  ${VAULT_NAME} ${archive}`
       if [ $? -eq 0 ]
       then
         echo "${output}"
