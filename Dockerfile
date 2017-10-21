@@ -22,6 +22,7 @@ COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod 755 /usr/local/bin/entrypoint.sh 
 
 ENV VAULT_NAME=""
+ENV UPLOAD_DIR="/upload"
 
 ENV aws_access_key="" 
 ENV aws_secret_key="" 
